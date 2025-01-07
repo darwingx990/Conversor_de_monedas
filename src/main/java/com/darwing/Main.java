@@ -1,18 +1,7 @@
 package com.darwing;
 
-import com.google.gson.FieldNamingPolicy;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
 
@@ -36,38 +25,44 @@ public class Main {
         System.out.println("Enter the amount you wish to convert to: ");
         amount = scan.nextDouble();
 
+
+        scan.close();
+
     }
-
-
-
-
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(url))
-                .GET()
-                .build();
-
-        try {
-            HttpResponse<String> response = client
-                    .send(request, HttpResponse.BodyHandlers.ofString());
-
-            String jsonBody = response.body();
-            Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
-                    .create();
-
-//            TituloDto miTituloDto = gson.fromJson(jsonBody, TituloDto.class);
-//            System.out.println(miTituloDto);
-        } catch (Exception e) {
-            System.out.println("Ocurrió un Error: " + e.getMessage());
-        }
-//        try {
-//            HttpResponse<String> respuesta=client.send(request, BodyHandler.asString());
-//            System.out.println(respuesta.body());
-//        } catch (IOException | InterruptedException e) {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        }
+//
+//
+//    HttpClient client = HttpClient.newHttpClient();
+//    HttpRequest request = HttpRequest.newBuilder()
+//            .uri(URI.create(url))
+//            .GET()
+//            .build();
+//
+//        try
+//
+//    {
+//        HttpResponse<String> response = client
+//                .send(request, HttpResponse.BodyHandlers.ofString());
+//
+//        String jsonBody = response.body();
+//        Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+//                .create();
+//
+////            TituloDto miTituloDto = gson.fromJson(jsonBody, TituloDto.class);
+////            System.out.println(miTituloDto);
+//    } catch(
+//    Exception e)
+//
+//    {
+//        System.out.println("Ocurrió un Error: " + e.getMessage());
 //    }
-
-    }
+////        try {
+////            HttpResponse<String> respuesta=client.send(request, BodyHandler.asString());
+////            System.out.println(respuesta.body());
+////        } catch (IOException | InterruptedException e) {
+////            // TODO Auto-generated catch block
+////            e.printStackTrace();
+////        }
+////    }
+//
+//}
 }
