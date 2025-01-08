@@ -42,7 +42,8 @@ public class CurrencyConverter {
                     System.out.println("Currency not found in our system.");
                 }
             } else {
-                System.out.println("Error connecting with the API. Status code: " + response.statusCode());
+
+                System.out.println("Status code: " + response.statusCode());
             }
         } catch (Exception e) {
             System.out.println("There was an error: " + e.getMessage());
